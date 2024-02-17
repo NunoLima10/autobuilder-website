@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Banner } from "./components/Banner/Banner";
+import PaletteView from "./components/PaletteView/PaletteView";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
   return (
     <div className="app">
      <Banner/>
+     <PaletteView/>
 
       <form>
         <input type="file" id="vox_file" accept=".vox" onChange={ (e) => setVoxFile(e.target.files[0])} />
