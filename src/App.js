@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Banner } from "./components/Banner/Banner";
 
 
 function App() {
@@ -45,9 +46,7 @@ function App() {
   }
   return (
     <div className="app">
-      <header className="App-header">
-       <h1>MiniWorld AutoBuilder</h1>
-      </header>
+     <Banner/>
 
       <form>
         <input type="file" id="vox_file" accept=".vox" onChange={ (e) => setVoxFile(e.target.files[0])} />
