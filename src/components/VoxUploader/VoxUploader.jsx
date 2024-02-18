@@ -2,7 +2,7 @@ import "./VoxUploader.css";
 import axios from "axios";
 import { useState } from "react";
 import UploadIcon from "../../assets/UploadIcon/UploadIcon";
-
+import Api from "../../api/Api";
 
 const VoxUploader = () => {
   const [voxFile, setVoxFile] = useState(null);
@@ -16,15 +16,11 @@ const VoxUploader = () => {
     fromData.append("palette", paletteFile);
 
     try {
-      const response = await axios.post(
-        " http://127.0.0.1:5000/converter",
-        fromData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await Api.post("/converter", fromData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       const contentType = response.headers["content-type"];
 
