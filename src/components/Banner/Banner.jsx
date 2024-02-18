@@ -7,8 +7,8 @@ export const Banner = () => {
     <div className="banner-container">
       <header className="App-header">
         {/* <h1>MiniWorld AutoBuilder</h1> */}
-        <img src={LogoImage} className="logo-image" />
-        <img src={BannerImage} className="banner-image" />
+        <img src={LogoImage} className="logo-image"  alt="logo"/>
+        <img src={BannerImage} className="banner-image"  alt="banner"/>
       </header>
     </div>
   );

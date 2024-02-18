@@ -6,7 +6,7 @@ const PaletteView = () => {
   return (
     <div className="palette-container">
       <h3 className="palette-title">Paleta de Cores</h3>
-      <img src={DefaultPalette} className="palette" />
+      <img src={DefaultPalette} className="palette" alt="palette" />
     </div>
   );
 };

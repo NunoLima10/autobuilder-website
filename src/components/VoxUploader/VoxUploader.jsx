@@ -1,8 +1,7 @@
-import "./VoxUploader.css";
-import axios from "axios";
 import { useState } from "react";
-import UploadIcon from "../../assets/UploadIcon/UploadIcon";
 import Api from "../../api/Api";
+import UploadIcon from "../../assets/UploadIcon/UploadIcon";
+import "./VoxUploader.css";
 
 const VoxUploader = () => {
   const [voxFile, setVoxFile] = useState(null);
