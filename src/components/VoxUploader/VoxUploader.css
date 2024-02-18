@@ -1,0 +1,102 @@
+.uploader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+input[type="file"] {
+  display: none;
+  outline: none;
+}
+
+.vox-uploader {
+  font-weight: bold;
+  color: var(--dark-blue);
+  font-size: 1.2em;
+  background-color: var(--blue);
+  padding: 0.9rem;
+  cursor: pointer;
+  width: 25rem;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.custom-palette-container {
+  margin-top: 0.5rem;
+  color: var(--dark-blue);
+  width: 25rem;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes hidden {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.image-uploader-off {
+  /* display: none; */
+  transition: 0.5s;
+  /* animation: hidden 0.5s forwards; */
+  opacity: 0;
+  transform: scaleX(0);
+}
+.image-uploader {
+  font-weight: bold;
+  color: var(--dark-blue);
+  font-size: 1.2em;
+  background-color: var(--blue);
+  padding: 0.9rem;
+  cursor: pointer;
+  width: 12.25rem;
+  text-align: center;
+  margin-right: 0.25rem;
+  transition: 0.5s;
+}
+.checkbox-container {
+  width: 12.25rem;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: bold;
+  transition: 0.5s;
+  margin-left: 0.25rem;
+}
+.checkbox-container input {
+  cursor: pointer;
+}
+.submit-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.download-button,
+.copy-button {
+  color: var(--dark-blue);
+  font-size: 1.2em;
+  background-color: var(--blue);
+  padding: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  width: 12.25rem;
+}
+.download-button {
+  margin-right: 0.25rem;
+}
+.copy-button {
+  margin-left: 0.25rem;
+}
