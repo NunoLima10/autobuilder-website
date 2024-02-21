@@ -6,7 +6,7 @@ const PaletteView = ({ customPalette }) => {
   let paletteImage = DefaultPalette;
   let fileName = "Paleta de Cores Padrão";
 
-  if(customPalette) {
+  if (customPalette) {
     paletteImage = window.URL.createObjectURL(customPalette);
     fileName = customPalette.name;
   }

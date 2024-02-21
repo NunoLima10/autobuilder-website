@@ -1,7 +1,7 @@
-import "./DropZone.css";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import UploadIcon from "../../assets/UploadIcon/UploadIcon";
+import "./DropZone.css";
 
 const DropZone = ({ onChangeFile }) => {
   const onDrop = useCallback((acceptedFiles) => {
@@ -9,7 +9,7 @@ const DropZone = ({ onChangeFile }) => {
       onChangeFile(acceptedFiles[0]);
       return;
     }
-    console.log("rejeitado");
+    // console.log("rejeitado");
   });
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -25,7 +25,7 @@ const DropZone = ({ onChangeFile }) => {
       <p className="drop-zone-description">
         <span>
           <UploadIcon />
-        </span>{" "}
+        </span>
         Arrate ou Clique para adicionar modelo Vox
       </p>
     </div>

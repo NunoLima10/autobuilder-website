@@ -13,3 +13,14 @@
   width: 60%;
   height: 1.5rem;
 }
+@media screen and (max-width: 900px) {
+  .palette {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .palette {
+    width: 90%;
+  }
+}

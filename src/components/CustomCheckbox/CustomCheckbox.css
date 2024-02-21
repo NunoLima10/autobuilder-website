@@ -1,13 +1,12 @@
 .checkbox-container {
-  color: var(--light-gray);
-  width: 100%;
   display: flex;
   align-items: center;
-  margin-left: 0.25rem;
-  display: flex;
-  gap: 0.5rem;
+  gap: .5rem;
+  width: 100%;
+  color: var(--light-gray);
   font-weight: bold;
-  transition: 0.5s;
+  margin-left: .25rem;
+  transition: .5s;
 }
 .checkbox-container p {
   font-size: 1.2rem;
@@ -18,24 +17,20 @@
 }
 
 .checkbox-container button {
-  outline: none;
   width: 1.2rem;
   height: 1.2rem;
   cursor: pointer;
-  transition: 0.5s;
+  transition: .5s;
+  outline: none;
 }
-/* .checkbox-container p {
-  width: auto;
-} */
-
 .checked-on {
-  background-color: var(--blue);
   position: relative;
   border: none;
+  background-color: var(--blue);
 }
 .checked-off {
-  background-color: transparent;
   border: 0.1rem solid var(--blue);
+  background-color: transparent;
 }
 .checked-on::after {
   content: "";
