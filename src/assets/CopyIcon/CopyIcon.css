@@ -1,0 +1,9 @@
+.copy-icon {
+  fill: inherit;
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: translate(0, 50%);
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+}

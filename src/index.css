@@ -1,24 +1,25 @@
-
-:root{
-  --light-blue:#c7ddec;
-  --blue: #b3d2e7;
-  --dark-blue:#3c5b7a;
+:root {
+  --blue: #4d4aff;
+  --light-blue:#4d4aff54;
+  --light-gray: #ededed;
+  --dark-gray: #242424;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto';
+  /* font-family: "Roboto"; */
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--light-blue);
+  background-color: var(--dark-gray);
 }
-
-
-
+@font-face {
+  font-family:  Arista;
+  src: url("/src/assets/[z]\ Arista\ Trial.ttf");
+  font-weight: bold;
+}
 

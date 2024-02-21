@@ -1,0 +1,50 @@
+.previewer-container {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  margin: 0.5rem;
+}
+.file-icon-container {
+  background-color: var(--dark-gray);
+  width: 5.5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.file-name-container {
+  background-color: var(--dark-gray);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  margin-left: 0.5rem;
+  color: var(--light-gray);
+}
+.file-name {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.delete-icon-container {
+  background-color: var(--dark-gray);
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+.delete-button {
+  height: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  fill: var(--blue);
+}
+.delete-button:hover {
+  fill: var(--light-gray);
+}

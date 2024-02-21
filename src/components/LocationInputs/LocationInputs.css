@@ -1,0 +1,39 @@
+.location-inputs-container-hidden {
+  transition: 0.5s;
+  transform: scaleY(0);
+  transform-origin: top;
+  height: 0;
+}
+
+.location-inputs-container {
+  transition: 0.5s;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  /* margin-left: -.5rem; */
+}
+.location-input {
+  height: 2.5rem;
+  background-color: var(--light-blue);
+  outline: none;
+  border: none;
+  max-width: auto;
+  resize: horizontal;
+  width: 3.5rem;
+  margin-right: 0.5rem;
+  color: var(--light-gray);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+.location-input::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  --moz-appearance: textfield;
+}
+.location-input::placeholder {
+  color: var(--light-gray);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
