@@ -4,3 +4,10 @@
   height: 2rem;
   transition: 0.5s;
 }
+
+@media screen and (max-width: 600px) {
+  .trash-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}

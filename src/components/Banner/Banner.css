@@ -57,7 +57,7 @@
   position: relative;
   display: block;
   width: calc(105% + 1.3px);
-  height: 59px;
+  height: 60px;
 }
 
 .custom-shape-divider-bottom-1708381704 .shape-fill {
@@ -109,7 +109,7 @@
 
   .custom-shape-divider-bottom-1708381704 svg {
     width: calc(200% + 1.3px);
-    transform: translate(-30%, 0);
+    transform: translate(-30%, -2%);
   }
 
 

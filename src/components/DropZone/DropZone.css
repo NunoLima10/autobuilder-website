@@ -1,17 +1,18 @@
 .drop-zone {
-  background-color: #4d4aff19;
-  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60%;
-  border: 0.125rem dashed var(--blue);
-  border-radius: 0.2rem;
+  height: 25rem;
+  background-color: #4d4aff19;
+  border: .125rem dashed var(--blue);
+  border-radius: .2rem;
   font-weight: 500;
   font-size: 1rem;
   padding: 0 0.5rem;
   margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
+  border-radius: .8rem;
 }
 
 .drop-zone:focus {
@@ -39,5 +40,6 @@
 @media screen and (max-width: 600px) {
   .drop-zone {
     width: 90%;
+    height: 20rem;
   }
 }

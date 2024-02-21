@@ -5,95 +5,126 @@
   flex-direction: column;
   margin-top: 2rem;
 }
+
 input[type="file"] {
   display: none;
   outline: none;
 }
+
 .vox-uploader {
-  font-weight: bold;
-  color: var(--dark-blue);
-  font-size: 1.2em;
-  background-color: var(--blue);
-  padding: 0.9rem;
-  cursor: pointer;
   width: 25rem;
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 1.2em;
   text-align: center;
-  transition: 0.5s;
+  padding: .9rem;
+  background-color: var(--blue);
+  cursor: pointer;
+  transition: .5s;
 }
 
 .custom-settings {
   display: flex;
   flex-direction: column;
-  background-color: #19191963;
-  height: 20rem;
   width: 60%;
+  min-height: 20rem;
+  height: auto;
+  background-color: #19191963;
+  border-radius: .8rem;
+  margin-bottom: .5rem;
 }
+
 .settings-title {
-  margin: 0 0.5rem;
+  margin: 0 .5rem;
   color: var(--light-gray);
   font-weight: bold;
   font-size: 1.5rem;
 }
+
 .advanced-settings {
-  margin: 0.5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
+  margin: .5rem;
+  row-gap: 0rem;
 }
+
 .build-location-container {
   display: flex;
   flex-direction: column;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
 }
+
 .build-location-toggle {
   display: inline;
-  margin-left: 0.5rem;
   width: 1.2rem;
   height: 1.2rem;
+  margin-left: .5rem;
   transform: translate(0, 25%);
   background-color: var(--blue);
 }
+
 .custom-palette-container {
   display: flex;
   flex-direction: column;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
 }
+
 .select-palette-off {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-  font-weight: bold;
-  color: var(--light-gray);
-  font-size: 1rem;
-  background-color: var(--light-blue);
-  cursor: pointer;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
-  transform: scaleY(0);
-  transform-origin: top;
+  width: 100%;
   height: 0;
+
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--light-gray);
+  cursor: pointer;
+  background-color: var(--light-blue);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: .3s ease-out;
 }
+
 .select-palette {
-  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: .5rem;
   font-weight: bold;
   color: var(--light-gray);
   font-size: 1rem;
   background-color: var(--light-blue);
   cursor: pointer;
-  width: 100%;
-  transition: 0.5s;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: .3s ease-out;
+  border-radius: .3rem;
 }
+
 .fill-block-container {
   display: flex;
   flex-direction: column;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
 }
+
+.select-block-off {
+  width: 100%;
+  height: 0;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: .3s ease-out;
+}
+
+.select-block {
+  width: 100%;
+  height: 2.5rem;
+  transition: .3s ease-out;
+  transform-origin: center;
+
+}
+
 .select-block-off input {
   height: 2.5rem;
   background-color: var(--light-blue);
@@ -101,41 +132,46 @@ input[type="file"] {
   border: none;
   max-width: auto;
   resize: horizontal;
-  width: 2.5rem;
-  margin-right: 0.5rem;
+  margin-top: .5rem;
+  margin-right: .5rem;
+  padding-left: .5rem;
+  font-size: 1rem;
   color: var(--light-gray);
   font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  transition: 0.5s;
-  transform: scaleY(0);
-  transform-origin: top;
-  height: 0;
-  margin-top: 0.5rem;
+  border-radius: .3rem;
+  transform-origin: center;
 }
 
 .select-block input {
+  width: 100%;
   height: 2.5rem;
   background-color: var(--light-blue);
   outline: none;
   border: none;
   max-width: auto;
   resize: horizontal;
-  width: 2.5rem;
-  margin-right: 0.5rem;
+  margin-top: .5rem;
+  margin-right: .5rem;
+  padding-left: .5rem;
+  font-size: 1rem;
   color: var(--light-gray);
   font-weight: bold;
-  font-size: 1rem;
-  transition: 0.5s;
-  width: 100%;
-  padding-left: 0.5rem;
-  margin-top: 0.5rem;
+  border-radius: .3rem;
+  transform-origin: center;
 }
+
+.select-block-off input::placeholder {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--light-gray);
+}
+
 .select-block input::placeholder {
-  color: var(--light-gray);
-  font-weight: bold;
   font-size: 1rem;
+  font-weight: bold;
+  color: var(--light-gray);
 }
+
 .select-block input::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -144,32 +180,32 @@ input[type="file"] {
 }
 
 .submit-buttons {
-  /* justify-self: flex-end; */
-  margin-top: auto;
-  margin-bottom: 1rem;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
 .action-button {
+  position: relative;
+  width: 14rem;
   height: 3.5rem;
+  text-align: left;
   color: var(--dark-gray);
   font-size: 1.2em;
-  background-color: var(--blue);
-  padding: 0.9rem;
+  font-weight: bold;
+  padding: .9rem;
+  margin: 0 .25rem;
   cursor: pointer;
   outline: none;
   border: none;
-  font-weight: bold;
-  width: 14rem;
-  transition: 0.5s;
-  position: relative;
-  text-align: left;
-  margin: 0 0.25rem;
   stroke: var(--dark-gray);
   fill: var(--dark-gray);
+  background-color: var(--blue);
+  transition: .5s;
+  border-radius: .3rem;
 }
 
 .action-button:hover {
@@ -179,50 +215,121 @@ input[type="file"] {
 }
 
 .loading-action-button {
+  position: relative;
+  width: 14rem;
   height: 3.5rem;
+  text-align: left;
+  color: var(--light-gray);
+  font-weight: bold;
   font-size: 1.2em;
-  background-color: var(--blue);
-  padding: 0.9rem;
+  padding: .9rem;
   outline: none;
   border: none;
-  font-weight: bold;
-  width: 14rem;
-  transition: 0.5s;
-  color: var(--light-gray);
   fill: var(--light-gray);
-  position: relative;
-  text-align: left;
+  stroke: var(--light-gray);
+  transition: .5s;
+  border-radius: .3rem;
+  background-color: var(--blue);
 }
+
 .finished-action-button {
   display: none;
 }
+
 @keyframes rotate {
   to {
     transform: rotate(360deg);
   }
 }
+
 .loading-action-button svg path {
   animation: rotate 1.5s linear infinite;
   transform-origin: center;
 }
 
-/* .copy-button {
-  margin-left: 0.25rem;
-}
-.copy-button:hover {
-  color: var(--light-gray);
-} */
+@media screen and (max-width: 900px) {
+  .custom-settings {
+    width: 80%;
+    height: auto;
+    gap: .5rem;
+  }
 
-/* .icon-button {
-  width: 2.5rem;
-  height: 100%;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  fill: var(--dark-blue);
-  transition: 0.5s;
-  cursor: pointer;
+  .advanced-settings {
+    gap: .5rem;
+    row-gap: 0rem;
+  }
+
+  .build-location-container {
+    margin-top: .1rem;
+
+  }
+
+  .custom-palette-container {
+    margin-top: .1rem;
+
+  }
+
+  .fill-block-container {
+    margin-top: .1rem;
+  }
 }
-.icon-button:hover {
- 
-} */
+
+@media screen and (max-width: 600px) {
+  .custom-settings {
+    width: 95%;
+    height: auto;
+    min-height: 22rem;
+    gap: .5rem;
+    position: relative;
+  }
+
+  .advanced-settings {
+    margin: .1rem;
+    gap: .2rem;
+  }
+
+  .settings-title {
+    font-size: 1rem;
+  }
+
+  .select-palette {
+    height: 2rem;
+  }
+
+  .select-block input {
+    height: 2rem;
+  }
+
+  .submit-buttons {
+    position: absolute;
+    width: auto;
+    right: .5rem;
+    bottom: .5rem;
+    margin-bottom: 0;
+  }
+
+  .action-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  .action-button span {
+    display: none;
+
+  }
+
+  .loading-action-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    padding: .9rem;
+    margin: 0 .25rem;
+  }
+
+  .loading-action-button span {
+    display: none;
+  }
+
+
+}

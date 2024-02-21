@@ -1,39 +1,55 @@
 .location-inputs-container-hidden {
-  transition: 0.5s;
+  transition: .5s;
   transform: scaleY(0);
-  transform-origin: top;
+  transform-origin: center;
   height: 0;
 }
 
 .location-inputs-container {
   transition: 0.5s;
   height: 2.5rem;
-  margin-top: 0.5rem;
-  /* margin-left: -.5rem; */
+  margin-top: .5rem;
 }
+
 .location-input {
+  width: 3.5rem;
   height: 2.5rem;
   background-color: var(--light-blue);
   outline: none;
   border: none;
   max-width: auto;
   resize: horizontal;
-  width: 3.5rem;
-  margin-right: 0.5rem;
+  margin-right: .5rem;
   color: var(--light-gray);
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+  border-radius: .3rem;
 }
+
 .location-input::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
   --moz-appearance: textfield;
 }
+
 .location-input::placeholder {
   color: var(--light-gray);
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .location-input {
+    width: 2.5rem;
+    height: 2rem;
+    font-size: .8rem;
+  }
+
+  .location-input::placeholder {
+    font-size: .8rem;
+  }
+
 }

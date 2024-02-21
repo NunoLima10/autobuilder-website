@@ -14,7 +14,7 @@ const FilePreviewer = ({ fileName, onDelete }) => {
       </div>
       <div className="file-name-container">
         <p className="file-name">{fileName}</p>
-        <p>Arquivo voxel</p>
+        <p className="file-type" >Arquivo voxel</p>
       </div>
       <div className="delete-icon-container">
         <button className="delete-button" onClick={HandelDelete}>

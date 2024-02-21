@@ -8,9 +8,10 @@
   margin-left: .25rem;
   transition: .5s;
 }
+
 .checkbox-container p {
   font-size: 1.2rem;
-} 
+}
 
 .checkbox-container input {
   cursor: pointer;
@@ -23,15 +24,18 @@
   transition: .5s;
   outline: none;
 }
+
 .checked-on {
   position: relative;
   border: none;
   background-color: var(--blue);
 }
+
 .checked-off {
   border: 0.1rem solid var(--blue);
   background-color: transparent;
 }
+
 .checked-on::after {
   content: "";
   display: block;
@@ -43,4 +47,10 @@
   border: solid var(--light-gray);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+@media screen and (max-width: 600px) {
+  .checkbox-container p {
+    font-size: 1rem;
+  }
 }

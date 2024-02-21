@@ -17,6 +17,7 @@ const DropZone = ({ onChangeFile }) => {
     accept: { "model/vox": [".vox"] },
     maxFiles: 1,
     multiple: false,
+    maxSize:5242880
   });
 
   return (

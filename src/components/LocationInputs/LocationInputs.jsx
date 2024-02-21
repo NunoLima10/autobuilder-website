@@ -17,19 +17,19 @@ const LocationInputs = ({isVisible, onChange}) => {
       type="number"
       placeholder="X"
       className="location-input"
-      onChange={(e) => {setX(e.target.value); HandelLocationChange()} }
+      onChange={(e) => {setX(Number(e.target.value)); HandelLocationChange()} }
       ></input>
     <input
       type="number"
       placeholder="Y"
       className="location-input"
-      onChange={(e) => {setY(e.target.value); HandelLocationChange()} }
+      onChange={(e) => {setY(Number(e.target.value)); HandelLocationChange()} }
       ></input>
     <input
       type="number"
       placeholder="Z"
       className="location-input"
-      onChange={(e) => {setZ(e.target.value); HandelLocationChange()} }
+      onChange={(e) => {setZ(Number(e.target.value)); HandelLocationChange()} }
     ></input>
   </div>
   )
