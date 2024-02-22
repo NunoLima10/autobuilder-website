@@ -25,7 +25,7 @@ function CopyFileTextToClipBoard(fileText) {
   navigator.clipboard.writeText(fileText);
 }
 
-const VoxUploader = ({ onChangePalette }) => {
+const VoxUploader = ({ onChangePalette, onNotification }) => {
   const [generateScript, setGenerateScript] = useState(null);
   const [voxFile, setVoxFile] = useState();
   const [useLocation, setUseLocation] = useState(false);
@@ -41,13 +41,13 @@ const VoxUploader = ({ onChangePalette }) => {
   }
   function HandelFileDeletion() {
     setVoxFile(null);
-    setUseLocation(false)
-    setBuildLocation(null)
-    setUseDefaultPalette(false)
-    setPaletteFile(null)
-    setUseFillBlock(false)
-    setFillBlockId(null)
-    setGenerateScript(null)
+    setUseLocation(false);
+    setBuildLocation(null);
+    setUseDefaultPalette(false);
+    setPaletteFile(null);
+    setUseFillBlock(false);
+    setFillBlockId(null);
+    setGenerateScript(null);
     setGenerationState("action-button");
     onChangePalette(() => null);
   }
@@ -77,10 +77,12 @@ const VoxUploader = ({ onChangePalette }) => {
     event.preventDefault();
     const fileName = voxFile.name.split(".")[0];
     DownloadFile(generateScript, fileName);
+    onNotification({ message: "Script baixado", type: "success", isVisible: true });
   }
   function HandelFileCopy(event) {
     event.preventDefault();
     CopyFileTextToClipBoard(generateScript);
+    onNotification({ message: "Copiado para área de transferência", type: "success", isVisible: true });
   }
 
   function FormDataValidation() {
@@ -102,26 +104,23 @@ const VoxUploader = ({ onChangePalette }) => {
     if (useDefaultPalette)
       if (paletteFile > megaByte) return "Paleta selecionada é maior que 1mb";
 
-    if (useFillBlock){
+    if (useFillBlock) {
       if (isNaN(fillBlockId)) return "Id bloco Preenchimento não é valido";
-      if (!isNaN(fillBlockId) && fillBlockId <= 0) return "Id bloco Preenchimento não é valido";
-
+      if (!isNaN(fillBlockId) && fillBlockId <= 0)
+        return "Id bloco Preenchimento não é valido";
     }
-
   }
   async function GenerateScript(event) {
     event.preventDefault();
 
     const errorMessage = FormDataValidation();
     if (errorMessage) {
-      //call notification
-      alert(errorMessage);
+      onNotification({ message: errorMessage, type: "error", isVisible: true });
       return;
     }
 
     const fromData = new FormData();
     fromData.append("vox", voxFile);
-    console.log(buildLocation)
 
     if (useLocation) fromData.append("location[]", buildLocation);
 
@@ -140,6 +139,7 @@ const VoxUploader = ({ onChangePalette }) => {
       console.log(error);
     } finally {
       setGenerationState("finished-action-button");
+      onNotification({ message:"Geração do script completo", type: "success", isVisible: true });
     }
   }
 

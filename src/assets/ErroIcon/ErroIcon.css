@@ -1,0 +1,12 @@
+.erro-icon{
+    width: 2rem;
+    height: 2rem;
+    fill: inherit;
+}
+
+@media screen and (max-width: 600px) {
+    .erro-icon{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
