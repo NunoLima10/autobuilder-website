@@ -12,7 +12,7 @@ async function UploadFiles(formData) {
     },
   });
 
-  if (response.status == 200) {
+  if (response.status === 200) {
     ApiResponse.data = response.data;
     return ApiResponse;
   }

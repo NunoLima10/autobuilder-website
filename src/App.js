@@ -2,6 +2,7 @@ import { useState } from "react";
 import Banner  from "./components/Banner/Banner";
 import PaletteView from "./components/PaletteView/PaletteView";
 import VoxUploader from "./components/VoxUploader/VoxUploader";
+import DonateButton from "./components/DonateButton/DonateButton";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Banner />
       <PaletteView customPalette={customPalette} />
       <VoxUploader onChangePalette={setCustomPalette} />
+      <DonateButton/>
     </div>
   );
 }

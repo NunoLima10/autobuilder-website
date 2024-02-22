@@ -1,0 +1,27 @@
+.donation-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    
+}
+.donation-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 4.5rem;
+    padding: 2rem 5rem;
+    gap: .5rem;
+    background-color: #19191963;
+    border-radius: .5rem;
+}
+.personal-logo-image{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.donation-image{
+    height: 3rem;
+}
