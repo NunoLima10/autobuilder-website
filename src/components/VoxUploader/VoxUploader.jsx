@@ -49,6 +49,7 @@ const VoxUploader = ({ onChangePalette }) => {
     setFillBlockId(null)
     setGenerateScript(null)
     setGenerationState("action-button");
+    onChangePalette(() => null);
   }
 
   function HandelUseCustomPalette() {
@@ -91,7 +92,7 @@ const VoxUploader = ({ onChangePalette }) => {
     if (useLocation) {
       if (buildLocation.length !== 3) return "Local de construção não é valido";
       for (let index = 0; index < buildLocation.length; index++) {
-        if (isNaN(buildLocation[index])) return "Coordenada não é valida";
+        if (!buildLocation[index]) return "Coordenada não é valida";
       }
     }
 
@@ -101,10 +102,12 @@ const VoxUploader = ({ onChangePalette }) => {
     if (useDefaultPalette)
       if (paletteFile > megaByte) return "Paleta selecionada é maior que 1mb";
 
-    if (useFillBlock)
+    if (useFillBlock){
       if (isNaN(fillBlockId)) return "Id bloco Preenchimento não é valido";
+      if (!isNaN(fillBlockId) && fillBlockId <= 0) return "Id bloco Preenchimento não é valido";
 
-    if (fillBlockId <= 0) return "Id bloco Preenchimento não é valido";
+    }
+
   }
   async function GenerateScript(event) {
     event.preventDefault();
@@ -118,8 +121,9 @@ const VoxUploader = ({ onChangePalette }) => {
 
     const fromData = new FormData();
     fromData.append("vox", voxFile);
+    console.log(buildLocation)
 
-    if (useLocation) fromData.append("location", buildLocation);
+    if (useLocation) fromData.append("location[]", buildLocation);
 
     if (useDefaultPalette) fromData.append("palette", paletteFile);
 
