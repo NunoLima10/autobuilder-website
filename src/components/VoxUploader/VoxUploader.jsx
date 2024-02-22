@@ -77,12 +77,20 @@ const VoxUploader = ({ onChangePalette, onNotification }) => {
     event.preventDefault();
     const fileName = voxFile.name.split(".")[0];
     DownloadFile(generateScript, fileName);
-    onNotification({ message: "Script baixado", type: "success", isVisible: true });
+    onNotification({
+      message: "Script baixado",
+      type: "success",
+      isVisible: true,
+    });
   }
   function HandelFileCopy(event) {
     event.preventDefault();
     CopyFileTextToClipBoard(generateScript);
-    onNotification({ message: "Copiado para área de transferência", type: "success", isVisible: true });
+    onNotification({
+      message: "Copiado para área de transferência",
+      type: "success",
+      isVisible: true,
+    });
   }
 
   function FormDataValidation() {
@@ -128,19 +136,24 @@ const VoxUploader = ({ onChangePalette, onNotification }) => {
 
     if (useFillBlock) fromData.append("block", fillBlockId);
 
-    try {
-      setGenerationState("loading-action-button");
-
-      const ApiResponse = await UploadFiles(fromData);
-      if (!ApiResponse.error) {
-        setGenerateScript(ApiResponse.data);
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
+    setGenerationState("loading-action-button");
+    const ApiResponse = await UploadFiles(fromData);
+    if (!ApiResponse.error) {
+      setGenerateScript(ApiResponse.data);
       setGenerationState("finished-action-button");
-      onNotification({ message:"Geração do script completo", type: "success", isVisible: true });
+      onNotification({
+        message: "Geração do script completo",
+        type: "success",
+        isVisible: true,
+      });
     }
+    onNotification({
+      message: ApiResponse.error,
+      type: "error",
+      isVisible: true,
+    });
+    setGenerationState("action-button");
+
   }
 
   return (
