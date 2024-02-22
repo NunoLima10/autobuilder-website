@@ -26,7 +26,7 @@ function CopyFileTextToClipBoard(fileText) {
 }
 
 const VoxUploader = ({ onChangePalette }) => {
-  const [generateScript, setGenerateScript] = useState(null)
+  const [generateScript, setGenerateScript] = useState(null);
   const [voxFile, setVoxFile] = useState();
   const [useLocation, setUseLocation] = useState(false);
   const [buildLocation, setBuildLocation] = useState([]);
@@ -41,6 +41,13 @@ const VoxUploader = ({ onChangePalette }) => {
   }
   function HandelFileDeletion() {
     setVoxFile(null);
+    setUseLocation(false)
+    setBuildLocation(null)
+    setUseDefaultPalette(false)
+    setPaletteFile(null)
+    setUseFillBlock(false)
+    setFillBlockId(null)
+    setGenerateScript(null)
     setGenerationState("action-button");
   }
 
@@ -81,8 +88,12 @@ const VoxUploader = ({ onChangePalette }) => {
 
     if (voxFile > megaByte * 5) return "Arquivo Vox é maior que 5mb";
 
-    if (useLocation)
+    if (useLocation) {
       if (buildLocation.length !== 3) return "Local de construção não é valido";
+      for (let index = 0; index < buildLocation.length; index++) {
+        if (isNaN(buildLocation[index])) return "Coordenada não é valida";
+      }
+    }
 
     if (useDefaultPalette)
       if (!paletteFile) return "Paleta não foi selecionada";
@@ -91,8 +102,7 @@ const VoxUploader = ({ onChangePalette }) => {
       if (paletteFile > megaByte) return "Paleta selecionada é maior que 1mb";
 
     if (useFillBlock)
-      if (typeof fillBlockId !== Number)
-        return "Id bloco Preenchimento não é valido";
+      if (isNaN(fillBlockId)) return "Id bloco Preenchimento não é valido";
 
     if (fillBlockId <= 0) return "Id bloco Preenchimento não é valido";
   }
