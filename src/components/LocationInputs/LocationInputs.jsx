@@ -8,7 +8,7 @@ const LocationInputs = ({ isVisible, onChange }) => {
 
   useEffect(() => {
     onChange([x, y, z]);
-  }, [x, y, z]);
+  }, [x, y, z,onChange]);
 
   return (
     <div

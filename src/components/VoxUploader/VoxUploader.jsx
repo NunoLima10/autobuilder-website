@@ -242,7 +242,7 @@ const VoxUploader = ({ onChangePalette, onNotification }) => {
           </div>
         </div>
       ) : (
-        <DropZone onChangeFile={HandelFileSelection} />
+        <DropZone onChangeFile={HandelFileSelection} onNotification={onNotification} />
       )}
     </form>
   );

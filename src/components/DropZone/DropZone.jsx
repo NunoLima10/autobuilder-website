@@ -3,21 +3,25 @@ import { useDropzone } from "react-dropzone";
 import UploadIcon from "../../assets/UploadIcon/UploadIcon";
 import "./DropZone.css";
 
-const DropZone = ({ onChangeFile }) => {
+const DropZone = ({ onChangeFile, onNotification }) => {
   const onDrop = useCallback((acceptedFiles) => {
     if (acceptedFiles?.length) {
       onChangeFile(acceptedFiles[0]);
       return;
     }
-    // console.log("rejeitado");
-  });
+    onNotification({
+      message: "Tente usar um arquivo Voxel",
+      type: "error",
+      isVisible: true,
+    });
+  },[onChangeFile, onNotification]);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: { "model/vox": [".vox"] },
     maxFiles: 1,
     multiple: false,
-    maxSize:5242880
+    maxSize: 5242880,
   });
 
   return (
