@@ -22,7 +22,7 @@
 
 .notification-container{
     height: 3rem;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
