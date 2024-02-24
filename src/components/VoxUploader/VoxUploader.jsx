@@ -146,6 +146,7 @@ const VoxUploader = ({ onChangePalette, onNotification }) => {
         type: "success",
         isVisible: true,
       });
+      return
     }
     onNotification({
       message: ApiResponse.error,
